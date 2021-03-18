@@ -26,7 +26,7 @@ class MoveForResultActivity : AppCompatActivity(), View.OnClickListener {
   }
   
   override fun onClick(v: View?) {
-    if (v.id == R.id.btn_choose){
+    if (v?.id == R.id.btn_choose){
       var value = 0
       when(rgNumber.checkedRadioButtonId) {
         R.id.rb_50 -> value = 50
