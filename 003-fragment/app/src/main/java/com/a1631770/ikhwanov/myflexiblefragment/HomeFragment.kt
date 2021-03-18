@@ -19,11 +19,19 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnCategoty = view.findViewById<Button>(R.id.btn_category)
-        btnCategoty.setOnClickListener(this)
+        val btnCategory: Button = view.findViewById(R.id.btn_category)
+        btnCategory.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        if (v?.id == R.id.btn_category) {
+            val mCategoryFragment = CategoryFragment()
+            val mFragmentManager = fragmentManager
+            mFragmentManager?.beginTransaction()?.apply {
+                replace(R.id.frame_container, mCategoryFragment, CategoryFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 }
