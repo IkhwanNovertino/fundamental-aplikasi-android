@@ -13,7 +13,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.fragment.app.DialogFragment
 
-class OptionDialogFragment : Fragment() {
+class OptionDialogFragment : DialogFragment() {
   private lateinit var btnChoose: Button
   private lateinit var btnClose: Button
   private lateinit var rgOptions: RadioGroup

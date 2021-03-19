@@ -39,7 +39,8 @@ class DetailCategoryFragment : Fragment() {
       val mOptionDialogFragment = OptionDialogFragment()
 
       val mFragmentManager = childFragmentManager
-      mOptionDialogFragment.show(mFragmentManager, OptionDialogFragment::class.java.simpleName)
+      mOptionDialogFragment
+          .show(mFragmentManager, OptionDialogFragment::class.java.simpleName)
     }
   }
 
