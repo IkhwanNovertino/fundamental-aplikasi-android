@@ -17,5 +17,6 @@
     <string name="rijkaard">Frank Rijkaard</string>
     <string name="choose">Pilih</string>
     <string name="close">Tutup</string>
+    <string name="this_profile">Ini Activity Profile</string>
 
 </resources>
