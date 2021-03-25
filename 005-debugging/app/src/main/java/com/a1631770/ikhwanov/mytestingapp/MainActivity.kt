@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     if (v.id == R.id.btn_set_value) {
       Log.d("MainActivity", names.toString())
       val name = StringBuilder()
-      for (i in 0..3) {
+      for (i in 0..2) {
         name.append(names[i]).append("\n")
       }
       tvText.text = name.toString()
