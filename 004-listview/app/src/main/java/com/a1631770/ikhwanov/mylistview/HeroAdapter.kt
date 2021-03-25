@@ -8,6 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import de.hdodenhof.circleimageview.CircleImageView
 
 class HeroAdapter internal constructor(private val context: Context) : BaseAdapter() {
   internal var heroes = arrayListOf<Hero>()
@@ -34,7 +35,7 @@ class HeroAdapter internal constructor(private val context: Context) : BaseAdapt
   private inner class ViewHolder internal constructor(view: View) {
     private val txtName = view.findViewById<TextView>(R.id.txt_name)
     private val txtDesc = view.findViewById<TextView>(R.id.txt_desc)
-    private val imgPhoto = view.findViewById<ImageView>(R.id.img_photo)
+    private val imgPhoto = view.findViewById<CircleImageView>(R.id.img_photo)
 
     internal fun bind(hero: Hero) {
       txtName.text = hero.name
