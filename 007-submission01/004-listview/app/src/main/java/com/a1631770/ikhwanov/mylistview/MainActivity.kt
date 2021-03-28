@@ -1,4 +1,4 @@
-  package com.a1631770.ikhwanov.mylistview
+package com.a1631770.ikhwanov.mylistview
 
 import android.content.res.TypedArray
 import androidx.appcompat.app.AppCompatActivity

@@ -55,20 +55,22 @@
             <ImageView
                 android:layout_width="17dp"
                 android:layout_height="20dp"
-                tools:src="@color/purple_700"/>
+                android:src="@drawable/ic_git_branch"/>
 
             <TextView
                 android:id="@+id/tv_repo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:textSize="13sp"
+                android:textColor="@color/black"
                 tools:text="@string/repo"/>
 
             <ImageView
-                android:layout_width="17dp"
-                android:layout_height="20dp"
+                android:layout_width="19dp"
+                android:layout_height="22dp"
                 android:layout_marginLeft="20dp"
-                tools:src="@color/purple_700"/>
+                android:src="@drawable/ic_follower"/>
 
             <TextView
                 android:id="@+id/tv_followers"
