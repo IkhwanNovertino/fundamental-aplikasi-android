@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">GitHubApp</string>
     <string name="user_name">Username</string>
-    <string name="followers">followers</string>
-    <string name="repo">repository</string>
+    <string name="followers">Followers</string>
+
+    <string name="repo">Repository</string>
+    <string name="repository">Repository</string>
+    <string name="following">Following</string>
+    <string name="about">ABOUT</string>
+    <string name="nama">Name</string>
+    <string name="company">Company</string>
+    <string name="location">Location</string>
 </resources>

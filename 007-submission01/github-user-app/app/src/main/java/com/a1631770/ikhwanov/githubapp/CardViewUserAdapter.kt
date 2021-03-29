@@ -10,6 +10,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 class CardViewUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adapter<CardViewUserAdapter.CardViewViewHolder>() {
+
+//  private lateinit var onItemClickCallback: OnItemClickCallback
+//
+//  fun setOnItemclickCallback(onItemClickCallback: OnItemClickCallback) {
+//    this.onItemClickCallback = onItemClickCallback
+//  }
+
   class CardViewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var imgPhoto: ImageView = itemView.findViewById(R.id.img_item)
     var tvName: TextView = itemView.findViewById(R.id.tv_name)
@@ -33,9 +40,18 @@ class CardViewUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.
     holder.tvName.text = user.username
     holder.tvRepo.text = user.repo.toString()
     holder.tvFollower.text = user.follower.toString()
+    //holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
+    holder.itemView.setOnClickListener {  }
   }
 
   override fun getItemCount(): Int {
     return listUser.size
   }
+
+//  class OnItemClickCallback {
+//    fun onItemClicked(data:User) {}
+//  }
+
 }
+
+

@@ -2,6 +2,7 @@ package com.a1631770.ikhwanov.githubapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -24,5 +25,15 @@ class MainActivity : AppCompatActivity() {
     rvUser.layoutManager = LinearLayoutManager(this)
     val cardViewUserAdapter = CardViewUserAdapter(list)
     rvUser.adapter = cardViewUserAdapter
+
+    cardViewUserAdapter.setOnItemclickCallback(object : CardViewUserAdapter.OnItemClickCallback{
+      override fun onItemClicked(data: User) {
+        showSelectedUser(data)
+      }
+    })
+  }
+
+  private fun showSelectedUser(user: User) {
+    Toast.makeText(this, "Kamu memilih " + user.name, Toast.LENGTH_SHORT).show()
   }
 }
