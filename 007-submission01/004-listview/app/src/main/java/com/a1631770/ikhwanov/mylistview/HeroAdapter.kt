@@ -21,7 +21,7 @@ class HeroAdapter internal constructor(private val context: Context) : BaseAdapt
   override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
     var itemView = convertView
     if (itemView == null) {
-      itemView = LayoutInflater.from(context).inflate(R.layout.item_hero, parent, false)
+      itemView = LayoutInflater.from(context).inflate(R.layout.item_heroo, parent, false)
     }
 
     val viewHolder = ViewHolder(itemView as View)
@@ -33,14 +33,17 @@ class HeroAdapter internal constructor(private val context: Context) : BaseAdapt
   }
 
   private inner class ViewHolder internal constructor(view: View) {
-    private val txtName = view.findViewById<TextView>(R.id.txt_name)
-    private val txtDesc = view.findViewById<TextView>(R.id.txt_desc)
-    private val imgPhoto = view.findViewById<CircleImageView>(R.id.img_photo)
+    private val tvUsername = view.findViewById<TextView>(R.id.tv_username)
+    private val tvRepo = view.findViewById<TextView>(R.id.tv_repo)
+    private val tvFollower = view.findViewById<TextView>(R.id.tv_followers)
+    private val imgAvatar = view.findViewById<CircleImageView>(R.id.img_avatar)
 
     internal fun bind(hero: Hero) {
-      txtName.text = hero.name
-      txtDesc.text = hero.desc
-      imgPhoto.setImageResource(hero.photo)
+      //txtName.text = hero.name
+      tvUsername.text = hero.username
+      tvRepo.text = hero.repo
+      tvFollower.text = hero.follower
+      imgAvatar.setImageResource(hero.avatar)
     }
   }
 }

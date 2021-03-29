@@ -7,9 +7,18 @@ import android.widget.*
 
 class MainActivity : AppCompatActivity() {
   private lateinit var adapter: HeroAdapter
+  //private lateinit var dataName: Array<String>
+  //private lateinit var dataDesc: Array<String>
+  //private lateinit var dataPhoto: TypedArray
+
   private lateinit var dataName: Array<String>
-  private lateinit var dataDesc: Array<String>
-  private lateinit var dataPhoto: TypedArray
+  private lateinit var dataUsername: Array<String>
+  private lateinit var dataRepo: Array<String>
+  private lateinit var dataFollower: Array<String>
+  private lateinit var dataFollowing: Array<String>
+  private lateinit var dataCompany: Array<String>
+  private lateinit var dataLocation: Array<String>
+  private lateinit var dataAvatar: TypedArray
   private var heroes = arrayListOf<Hero>()
 
 //  private val dataName = arrayOf(
@@ -48,17 +57,27 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun prepare() {
-    dataName = resources.getStringArray(R.array.data_name)
-    dataDesc = resources.getStringArray(R.array.data_desc)
-    dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+    dataName = resources.getStringArray(R.array.name)
+    dataUsername = resources.getStringArray(R.array.username)
+    dataRepo = resources.getStringArray(R.array.repository)
+    dataFollower = resources.getStringArray(R.array.followers)
+    dataFollowing = resources.getStringArray(R.array.following)
+    dataCompany = resources.getStringArray(R.array.company)
+    dataLocation = resources.getStringArray(R.array.location)
+    dataAvatar = resources.obtainTypedArray(R.array.avatar)
   }
 
   private fun addItem() {
-    for (position in dataName.indices) {
+    for (position in dataUsername.indices) {
       val hero = Hero(
-          dataPhoto.getResourceId(position, -1),
-          dataName[position],
-          dataDesc[position]
+        dataAvatar.getResourceId(position, -1),
+        dataUsername[position],
+        dataName[position],
+        dataCompany[position],
+        dataLocation[position],
+        dataRepo[position],
+        dataFollower[position],
+        dataFollowing[position]
       )
 
       heroes.add(hero)
