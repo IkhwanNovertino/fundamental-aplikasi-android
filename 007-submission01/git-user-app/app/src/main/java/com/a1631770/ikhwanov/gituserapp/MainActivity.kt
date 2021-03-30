@@ -1,5 +1,6 @@
 package com.a1631770.ikhwanov.gituserapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RelativeLayout
@@ -39,5 +40,8 @@ class MainActivity : AppCompatActivity() {
     Toast.makeText(this, "nama: ${user.name}, username: ${user.username} " +
             "\nRepo: ${user.repository}, follower: ${user.follower}, following: ${user.following}" +
             "\ncompany: ${user.company}, location: ${user.location}", Toast.LENGTH_SHORT).show()
+
+    val intent = Intent(this@MainActivity, DetailActivity::class.java)
+    intent.putExtra(DetailActivity.EXTRA_USER, list)
   }
 }

@@ -16,7 +16,7 @@
         tools:src="@color/purple_200"/>
 
     <TextView
-        android:id="@+id/_username"
+        android:id="@+id/tv_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/img_avatar"
@@ -25,7 +25,7 @@
         android:textSize="13sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        tools:text="@string/_username"/>
+        tools:text="@string/username"/>
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -85,21 +85,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/_repo"/>
+                android:text="@string/repository"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/_follower"/>
+                android:text="@string/follower"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/_following"/>
+                android:text="@string/following"/>
 
         </TableRow>
 
@@ -110,13 +110,13 @@
         android:id="@+id/_about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/_username"
+        android:layout_below="@id/tv_username"
         android:layout_marginTop="24dp"
         android:layout_marginLeft="6dp"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:text="@string/_about"/>
+        android:text="@string/about"/>
 
     <TableLayout
         android:layout_width="match_parent"
@@ -136,7 +136,7 @@
                 android:textColor="@color/black"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/_name"/>
+                android:text="@string/name"/>
 
             <TextView
                 android:id="@+id/tv_names"
@@ -160,7 +160,7 @@
                 android:textColor="@color/black"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/_company"/>
+                android:text="@string/company"/>
 
             <TextView
                 android:id="@+id/tv_company"
@@ -184,7 +184,7 @@
                 android:textColor="@color/black"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/_location"/>
+                android:text="@string/location"/>
 
             <TextView
                 android:id="@+id/tv_location"
