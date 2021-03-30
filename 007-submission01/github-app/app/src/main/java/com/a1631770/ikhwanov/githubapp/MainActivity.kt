@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     addItem()
 
     listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-      //Toast.makeText(this@MainActivity, users[position].username, Toast.LENGTH_SHORT).show()
+      Toast.makeText(this@MainActivity, users[position].username, Toast.LENGTH_SHORT).show()
       val dataUsers = Users()
       dataUsers.avatar = dataAvatar.getResourceId(position, -1)
       dataUsers.username = users[position].username
@@ -58,8 +58,8 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun prepare() {
-    dataName = resources.getStringArray(R.array.name)
     dataUsername = resources.getStringArray(R.array.username)
+    dataName = resources.getStringArray(R.array.name)
     dataRepo = resources.getStringArray(R.array.repository)
     dataFollower = resources.getStringArray(R.array.followers)
     dataFollowing = resources.getStringArray(R.array.following)

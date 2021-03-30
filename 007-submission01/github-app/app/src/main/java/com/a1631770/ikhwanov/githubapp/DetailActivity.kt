@@ -26,18 +26,18 @@ class DetailActivity : AppCompatActivity() {
     val tvCompany = findViewById<TextView>(R.id.tv_company)
     val tvLocation = findViewById<TextView>(R.id.tv_location)
 
-    val user = intent.getParcelableExtra<Users>(EXTRA_USER)
+    val user = intent.getParcelableExtra<Users>(EXTRA_USER) as Users
     //val user = intent.getParcelableExtra<Users>(MainActivity.INTENT_DATA)
 
     //val testName: String? = user?.username
 
-    tvUsername.text = user?.username
-    tvName.text = user?.name
-    tvCompany.text = user?.company
-    tvLocation.text = user?.location
-    tvRepo.text = user?.repo
-    tvFollower.text = user?.follower
-    tvFollowing.text = user?.following
+    tvUsername.text = user.username
+    tvName.text = user.name
+    tvCompany.text = user.company
+    tvLocation.text = user.location
+    tvRepo.text = user.repo
+    tvFollower.text = user.follower
+    tvFollowing.text = user.following
     imgAvatar.setImageResource(user.avatar!!)
 
   }
