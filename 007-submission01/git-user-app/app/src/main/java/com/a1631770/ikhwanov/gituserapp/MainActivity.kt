@@ -3,6 +3,7 @@ package com.a1631770.ikhwanov.gituserapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RelativeLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -26,5 +27,17 @@ class MainActivity : AppCompatActivity() {
     val listUserAdapter = ListUserAdapter(list)
     rvUsers.adapter = listUserAdapter
 
+    listUserAdapter.setOnItemClickCallback(object : ListUserAdapter.OnItemClickCallback {
+      override fun onItemClicked(data: User) {
+        showSelectedUser(data)
+      }
+    })
+
+  }
+
+  private fun showSelectedUser(user: User) {
+    Toast.makeText(this, "nama: ${user.name}, username: ${user.username} " +
+            "\nRepo: ${user.repository}, follower: ${user.follower}, following: ${user.following}" +
+            "\ncompany: ${user.company}, location: ${user.location}", Toast.LENGTH_SHORT).show()
   }
 }
