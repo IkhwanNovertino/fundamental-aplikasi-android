@@ -1,5 +1,6 @@
 package com.a1631770.ikhwanov.githubapp
 
+import android.content.Intent
 import android.content.res.TypedArray
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
   private lateinit var dataAvatar: TypedArray
   private var users = arrayListOf<Users>()
 
+//  companion object {
+//    const val INTENT_DATA = "intent_data"
+//  }
+
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -34,7 +39,21 @@ class MainActivity : AppCompatActivity() {
     addItem()
 
     listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-      Toast.makeText(this@MainActivity, users[position].username, Toast.LENGTH_SHORT).show()
+      //Toast.makeText(this@MainActivity, users[position].username, Toast.LENGTH_SHORT).show()
+      val dataUsers = Users()
+      dataUsers.avatar = dataAvatar.getResourceId(position, -1)
+      dataUsers.username = users[position].username
+      dataUsers.name = dataName[position]
+      dataUsers.company = dataCompany[position]
+      dataUsers.location = dataLocation[position]
+      dataUsers.repo = dataRepo[position]
+      dataUsers.follower = dataFollower[position]
+      dataUsers.following = dataFollowing[position]
+
+
+      val moveObject = Intent(this@MainActivity, DetailActivity::class.java)
+      moveObject.putExtra(DetailActivity.EXTRA_USER, dataUsers)
+      startActivity(moveObject)
     }
   }
 

@@ -7,6 +7,7 @@
     <string name="_following">Following</string>
     <string name="_company">Company</string>
     <string name="_location">Location</string>
+    <string name="_about">ABOUT</string>
 
     <string-array name="username">
         <item>JakeWharton</item>

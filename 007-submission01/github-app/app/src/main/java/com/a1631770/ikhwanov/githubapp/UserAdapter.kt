@@ -41,7 +41,7 @@ class UserAdapter internal constructor(private val context: Context): BaseAdapte
             tvUsername.text = user.username
             tvRepo.text = user.repo
             tvFollower.text = user.follower
-            imgAvatar.setImageResource(user.avatar)
+            imgAvatar.setImageResource(user.avatar!!)
         }
     }
 }
