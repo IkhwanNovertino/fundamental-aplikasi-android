@@ -7,5 +7,5 @@
     <string name="about">ABOUT</string>
     <string name="following">Following</string>
     <string name="follower">Follower</string>
-    <string name="repository">Repository</string>
+    <string name="repository">Repo</string>
 </resources>

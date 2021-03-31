@@ -41,8 +41,6 @@ class MainActivity : AppCompatActivity() {
     intent.putExtra(DetailActivity.EXTRA_USER, user)
     this@MainActivity.startActivity(intent)
 
-    Toast.makeText(this, "nama: ${user.name}, username: ${user.username} " +
-            "\nRepo: ${user.repository}, follower: ${user.follower}, following: ${user.following}" +
-            "\ncompany: ${user.company}, location: ${user.location}", Toast.LENGTH_SHORT).show()
+    Toast.makeText(this, user.username, Toast.LENGTH_SHORT).show()
   }
 }

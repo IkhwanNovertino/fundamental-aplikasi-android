@@ -22,7 +22,7 @@
         android:layout_below="@id/img_avatar"
         android:layout_marginTop="8dp"
         android:layout_marginStart="6dp"
-        android:textSize="13sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/black"
         tools:text="@string/username"/>

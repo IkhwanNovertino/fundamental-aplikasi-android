@@ -22,6 +22,8 @@ class ListUserAdapter(private val listUser: ArrayList<User>) :
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var tvRepo = itemView.findViewById<TextView>(R.id.tv_repo)
+        var tvFollower = itemView.findViewById<TextView>(R.id.tv_follower)
         var tvUsername = itemView.findViewById<TextView>(R.id.tv_username)
         var imgAvatar = itemView.findViewById<ImageView>(R.id.img_avatar)
     }
@@ -39,6 +41,8 @@ class ListUserAdapter(private val listUser: ArrayList<User>) :
             .into(holder.imgAvatar)
 
         holder.tvUsername.text = user.username
+        holder.tvRepo.text = user.repository.toString()
+        holder.tvFollower.text = user.follower.toString()
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
     }
 
