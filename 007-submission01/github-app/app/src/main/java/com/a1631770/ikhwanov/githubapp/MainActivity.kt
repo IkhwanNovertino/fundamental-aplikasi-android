@@ -38,12 +38,12 @@ class MainActivity : AppCompatActivity() {
 
     addItem()
 
-    listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+    listView.onItemClickListener = AdapterView.OnItemClickListener { _, _,position, _ ->
       Toast.makeText(this@MainActivity, users[position].username, Toast.LENGTH_SHORT).show()
       val dataUsers = Users()
       dataUsers.avatar = dataAvatar.getResourceId(position, -1)
-      dataUsers.username = users[position].username
       dataUsers.name = dataName[position]
+      dataUsers.username = dataUsername[position]
       dataUsers.company = dataCompany[position]
       dataUsers.location = dataLocation[position]
       dataUsers.repo = dataRepo[position]
@@ -71,14 +71,14 @@ class MainActivity : AppCompatActivity() {
   private fun addItem() {
     for (position in dataUsername.indices) {
       val user = Users(
-        dataAvatar.getResourceId(position, -1),
-        dataUsername[position],
-        dataName[position],
-        dataCompany[position],
-        dataLocation[position],
-        dataRepo[position],
-        dataFollower[position],
-        dataFollowing[position]
+          dataAvatar.getResourceId(position, -1),
+          dataUsername[position],
+          dataName[position],
+          dataCompany[position],
+          dataLocation[position],
+          dataRepo[position],
+          dataFollower[position],
+          dataFollowing[position]
       )
 
       users.add(user)

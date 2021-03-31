@@ -15,7 +15,7 @@ class DetailActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_detail)
 
-    val user = intent.getParcelableArrayExtra(EXTRA_USER) as User
+    val user = intent.getParcelableExtra(EXTRA_USER) as User
 
     val imgAvatar = findViewById<ImageView>(R.id.img_avatar)
     val tvUsername = findViewById<TextView>(R.id.tv_username)
@@ -26,19 +26,14 @@ class DetailActivity : AppCompatActivity() {
     val tvCompany = findViewById<TextView>(R.id.tv_company)
     val tvLocation = findViewById<TextView>(R.id.tv_location)
 
-    if (user !== null) {
       imgAvatar.setImageResource(user.avatar!!)
       tvUsername.text = user.username
       tvName.text = user.name
       tvCompany.text = user.company
       tvLocation.text = user.location
-      tvRepo.text = user.repository.toString().trim()
-      tvFollower.text = user.follower.toString().trim()
-      tvFollowing.text = user.following.toString().trim()
-
-    }
-
-
+      tvRepo.text = user.repository.toString()
+      tvFollower.text = user.follower.toString()
+      tvFollowing.text = user.following.toString()
 
   }
 }

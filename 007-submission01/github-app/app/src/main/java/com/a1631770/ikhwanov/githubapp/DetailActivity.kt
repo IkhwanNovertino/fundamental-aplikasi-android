@@ -18,7 +18,7 @@ class DetailActivity : AppCompatActivity() {
     setContentView(R.layout.activity_detail)
 
     val imgAvatar = findViewById<CircleImageView>(R.id.img_avatar)
-    val tvUsername = findViewById<TextView>(R.id.tv_username)
+    val tvUsername = findViewById<TextView>(R.id._username)
     val tvRepo = findViewById<TextView>(R.id.tv_repo)
     val tvFollower = findViewById<TextView>(R.id.tv_follower)
     val tvFollowing = findViewById<TextView>(R.id.tv_following)
@@ -31,8 +31,8 @@ class DetailActivity : AppCompatActivity() {
 
     //val testName: String? = user?.username
 
-    tvUsername.text = user.username
     tvName.text = user.name
+    tvUsername.text = user.username
     tvCompany.text = user.company
     tvLocation.text = user.location
     tvRepo.text = user.repo
