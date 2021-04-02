@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.a1631770.ikhwanov.gituserapp.databinding.ItemRowUserBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
@@ -22,10 +23,7 @@ class ListUserAdapter(private val listUser: ArrayList<User>) :
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvRepo = itemView.findViewById<TextView>(R.id.tv_repo)
-        var tvFollower = itemView.findViewById<TextView>(R.id.tv_follower)
-        var tvUsername = itemView.findViewById<TextView>(R.id.tv_username)
-        var imgAvatar = itemView.findViewById<ImageView>(R.id.img_avatar)
+        val binding = ItemRowUserBinding.bind(itemView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -38,11 +36,11 @@ class ListUserAdapter(private val listUser: ArrayList<User>) :
         Glide.with(holder.itemView.context)
             .load(user.avatar)
             .apply(RequestOptions().override(80, 80))
-            .into(holder.imgAvatar)
+            .into(holder.binding.imgAvatar)
 
-        holder.tvUsername.text = user.username
-        holder.tvRepo.text = user.repository.toString()
-        holder.tvFollower.text = user.follower.toString()
+        holder.binding.tvUsername.text = user.username
+        holder.binding.tvRepo.text = user.repository.toString()
+        holder.binding.tvFollower.text = user.follower.toString()
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
     }
 

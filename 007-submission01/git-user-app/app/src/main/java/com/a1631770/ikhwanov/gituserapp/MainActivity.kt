@@ -7,26 +7,32 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.a1631770.ikhwanov.gituserapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-  private lateinit var rvUsers: RecyclerView
+//  private lateinit var rvUsers: RecyclerView
   private var list: ArrayList<User> = arrayListOf()
+
+  private lateinit var binding: ActivityMainBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+    //setContentView(R.layout.activity_main)
 
-    rvUsers = findViewById(R.id.rv_users)
-    rvUsers.setHasFixedSize(true)
+    //rvUsers = findViewById(R.id.rv_users)
+    //rvUsers.setHasFixedSize(true)
+    binding.rvUsers.setHasFixedSize(true)
 
     list.addAll(UsersData.listData)
     showRecyclerList()
   }
 
   private fun showRecyclerList() {
-    rvUsers.layoutManager = LinearLayoutManager(this)
+    binding.rvUsers.layoutManager = LinearLayoutManager(this)
     val listUserAdapter = ListUserAdapter(list)
-    rvUsers.adapter = listUserAdapter
+    binding.rvUsers.adapter = listUserAdapter
 
     listUserAdapter.setOnItemClickCallback(object : ListUserAdapter.OnItemClickCallback {
       override fun onItemClicked(data: User) {
