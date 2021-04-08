@@ -13,10 +13,14 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.bumptech.glide.Glide
+import de.hdodenhof.circleimageview.CircleImageView
 
 class MainActivity : AppCompatActivity() {
 
   private lateinit var appBarConfiguration: AppBarConfiguration
+  private lateinit var profileCircleImageView: CircleImageView
+  private var profileImageUrl="https://lh3.googleusercontent.com/-4qy2DfcXBoE/AAAAAAAAAAI/AAAAAAAABi4/rY-jrtntAi4/s640-il/photo.jpg"
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -34,8 +38,14 @@ class MainActivity : AppCompatActivity() {
     val navController = findNavController(R.id.nav_host_fragment)
     // Passing each menu ID as a set of Ids because each
     // menu should be considered as top level destinations.
+    
+    profileCircleImageView = navView.getHeaderView(0).findViewById(R.id.imageView)
+    Glide.with(this)
+      .load(profileImageUrl)
+      .into(profileCircleImageView)
+    
     appBarConfiguration = AppBarConfiguration(setOf(
-        R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
+        R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_cart), drawerLayout)
     setupActionBarWithNavController(navController, appBarConfiguration)
     navView.setupWithNavController(navController)
   }
