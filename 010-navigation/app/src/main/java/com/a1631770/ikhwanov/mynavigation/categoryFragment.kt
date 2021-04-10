@@ -34,16 +34,21 @@ class categoryFragment : Fragment() {
 
         binding.btnCategoryLifestyle.setOnClickListener {
 
-          val mBundle = Bundle()
-          mBundle.putString(EXTRA_NAME, "LifeStyle")
-          mBundle.putLong(EXTRA_STOCK, 7)
-          view.findNavController().navigate(R.id.action_categoryFragment_to_detailCategoryFragment)
+//          val mBundle = Bundle()
+//          mBundle.putString(EXTRA_NAME, "LifeStyle")
+//          mBundle.putLong(EXTRA_STOCK, 7)
+//          view.findNavController().navigate(R.id.action_categoryFragment_to_detailCategoryFragment)
 
 //          code error di name dan stock
 //          val toDetailCategoryFragment = categoryFragmentDirections.actionCategoryFragmentToDetailCategoryFragment()
 //          toDetailCategoryFragment.name = "Lifestyle"
 //          toDetailCategoryFragment.stock = 7
 //          view.findNavController().navigate(toDetailCategoryFragment)
+
+            val toDetailCategoryFragment = categoryFragmentDirections.actionCategoryFragmentToDetailCategoryFragment()
+            toDetailCategoryFragment.name = "Lifestyle"
+            toDetailCategoryFragment.stock = 7
+            view.findNavController().navigate(toDetailCategoryFragment)
 
         }
     }
