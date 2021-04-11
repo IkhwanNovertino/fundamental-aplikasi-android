@@ -2,10 +2,10 @@ package com.a1631770.ikhwanov.githubapp
 
 object UserData {
   private val usernames = arrayOf("JakeWharton", "amitshekhariitbhu", "romainguy", "chrisbanes",
-  "tipsy", "ravi8x", "jasoet", "budioktaviyan", "hendisantika", "sidiqpermana")
+  "tipsy", "ravi8x", "jasoet", "budioktaviyan", "hendisantika", "ikhwan")
 
   private val names = arrayOf("Jake Wharton", "Amit Shekhar", "Romain Guy", "Chris Banes",
-  "David", "Ravi Tamada", "Deny Prasetyo", "Budi Oktaviyan", "Hendi Santika", "Sidiq Permana")
+  "David", "Ravi Tamada", "Deny Prasetyo", "Budi Oktaviyan", "Hendi Santika", "Muhammad Ikhwan")
 
   private val company = arrayOf("Google, Inc.", "MindOrksOpenSource", "Google", "Google working on @android",
   "Working Group Two", "AndroidHive | Droid5", "gojek-engineering", "KotlinID",
