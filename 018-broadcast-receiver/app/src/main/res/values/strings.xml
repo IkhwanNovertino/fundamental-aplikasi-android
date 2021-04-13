@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MyBroadcastReceiver</string>
+    <string name="this_sms_receiver_app">This SMS receiver App</string>
+    <string name="check_sms_permission">Check SMS Permission</string>
+    <string name="download_file">Download a File</string>
+    <string name="comming_From">Coming From</string>
+    <string name="this_play">Oii, main kesini jadi engga? sekarang yak..</string>
+    <string name="incoming_message">Incoming Message</string>
+    <string name="from">From : %s</string>
+    <string name="close">close</string>
 </resources>
