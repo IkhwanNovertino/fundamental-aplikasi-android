@@ -35,7 +35,7 @@ class NoteHelper(context: Context) {
             database.close()
     }
 
-    fun queryAll() : Cursor {
+    fun queryAll(): Cursor {
         return database.query(
             DATABASE_TABLE,
             null,
@@ -43,8 +43,7 @@ class NoteHelper(context: Context) {
             null,
             null,
             null,
-            "$_ID ASC"
-        )
+            "$_ID ASC")
     }
 
     fun queryById(id: String) : Cursor {

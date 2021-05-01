@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         adapter.listNotes = notes
       } else {
         adapter.listNotes = ArrayList()
-        showSnakeBarMassage("tidak ada data saat ini")
+        showSnakeBarMassage("Tidak ada data saat ini")
       }
     }
   }

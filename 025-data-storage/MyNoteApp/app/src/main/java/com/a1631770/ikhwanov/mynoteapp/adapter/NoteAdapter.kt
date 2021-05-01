@@ -62,10 +62,10 @@ class NoteAdapter(private val activity: Activity) : RecyclerView.Adapter<NoteAda
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(listNotes[position])
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return this.listNotes.size
     }
 }
