@@ -45,7 +45,6 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
 
         noteHelper = NoteHelper.getInstance(applicationContext)
         noteHelper.open()
-
         note = intent.getParcelableExtra(EXTRA_NOTE)
         if (note != null) {
             position = intent.getIntExtra(EXTRA_POSITION, 0)
@@ -53,10 +52,8 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             note = Note()
         }
-
         val actionBarTitle: String
         val btnTitle: String
-
         if (isEdit) {
             actionBarTitle = "Ubah"
             btnTitle = "Update"
@@ -68,10 +65,8 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
             actionBarTitle = "Tambah"
             btnTitle = "Simpan"
         }
-
         supportActionBar?.title = actionBarTitle
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         binding.btnSubmit.text = btnTitle
 
         binding.btnSubmit.setOnClickListener(this)
@@ -81,15 +76,12 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
         if (v?.id == R.id.btn_submit) {
             val title = binding.edtTitle.text.toString().trim()
             val description = binding.edtDescription.text.toString().trim()
-
             if (title.isEmpty()) {
                 binding.edtTitle.error = "Field can not be blank"
                 return
             }
-
             note?.title = title
             note?.description = description
-
             val intent = Intent()
             intent.putExtra(EXTRA_NOTE, note)
             intent.putExtra(EXTRA_POSITION, position)
@@ -97,26 +89,24 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
             val values = ContentValues()
             values.put(DatabaseContract.NoteColumns.TITLE, title)
             values.put(DatabaseContract.NoteColumns.DESCRIPTION, description)
-
             if (isEdit) {
                 val result = noteHelper.update(note?.id.toString(), values).toLong()
-                if(result > 0) {
+                if (result > 0) {
                     setResult(RESULT_UPDATE, intent)
                     finish()
                 } else {
-                    Toast.makeText(this, "Gagal mengupdate data", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@NoteAddUpdateActivity, "Gagal mengupdate data", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 note?.date = getCurrentDate()
                 values.put(DATE, getCurrentDate())
                 val result = noteHelper.insert(values)
-
-                if(result > 0 ) {
+                if (result > 0) {
                     note?.id = result.toInt()
                     setResult(RESULT_ADD, intent)
                     finish()
                 } else {
-                    Toast.makeText(this, "Gagal menambahkan data", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@NoteAddUpdateActivity, "Gagal menambah data", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -125,7 +115,6 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
     private fun getCurrentDate(): String {
         val dateFormat = SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault())
         val date = Date()
-
         return dateFormat.format(date)
     }
 
@@ -137,7 +126,7 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.action_delete -> showAlertDialog(ALERT_DIALOG_DELETE)
             android.R.id.home -> showAlertDialog(ALERT_DIALOG_CLOSE)
         }
@@ -145,6 +134,7 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onBackPressed() {
+        super.onBackPressed()
         showAlertDialog(ALERT_DIALOG_CLOSE)
     }
 
@@ -166,7 +156,7 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
         alertDialogBuilder
             .setMessage(dialogMessage)
             .setCancelable(false)
-            .setPositiveButton("Ya") {_, _ ->
+            .setPositiveButton("Ya") { _, _ ->
                 if (isDialogClose) {
                     finish()
                 } else {
@@ -181,7 +171,7 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
                     }
                 }
             }
-            .setNegativeButton("Tidak") {dialog, _ -> dialog.cancel()}
+            .setNegativeButton("Tidak") { dialog, _ -> dialog.cancel() }
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()
     }
