@@ -16,7 +16,6 @@
         android:layout_gravity="center"
         android:onClick="sendNotification"
         android:text="@string/send_notif"
-
         android:textColor="@android:color/white" />
 
 </RelativeLayout>
